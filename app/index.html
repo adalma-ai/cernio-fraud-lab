@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cernio Fraud Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">TabPFN-3.5 hackathon project</p>
+      <h1>Cernio Fraud Lab</h1>
+      <p>Which synthetic payments should a small fraud team review before release?</p>
+    </div>
+    <span class="badge">Synthetic data only</span>
+  </header>
+
+  <main>
+    <section class="panel controls">
+      <label for="budget">Review budget <strong id="budgetLabel">5%</strong></label>
+      <input id="budget" type="range" min="1" max="20" value="5">
+      <label for="model">Queue model</label>
+      <select id="model"></select>
+    </section>
+
+    <section class="cards" id="cards"></section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Review queue</h2>
+        <p>Evidence is observable context, not a model explanation.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rank</th><th>Payment order</th><th>Rail</th><th>Amount</th><th>Score</th><th>Evidence</th><th>Label</th></tr></thead>
+          <tbody id="queue"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid-two">
+      <div class="panel">
+        <h2>Canonical payload</h2>
+        <p class="muted">BIAN-aligned payment and account records. Behavioral context is an extension.</p>
+        <pre id="payload"></pre>
+      </div>
+      <div class="panel">
+        <h2>Action boundary</h2>
+        <p class="muted">The public demo only proposes a single-payment hold. It never calls a core system.</p>
+        <pre id="action"></pre>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
